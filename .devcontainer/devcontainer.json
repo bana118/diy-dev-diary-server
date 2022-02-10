@@ -1,8 +1,8 @@
 {
-    "name": "project-name",
+    "name": "diy-dev-diary-server",
     "dockerFile": "Dockerfile",
     "extensions": [
-        "vscjava.vscode-java-debug",
+        "vscjava.vscode-java-pack",
         "richardwillis.vscode-gradle-extension-pack"
     ]
 }
