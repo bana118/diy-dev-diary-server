@@ -2,7 +2,8 @@
     "recommendations": [
         "ms-vscode-remote.remote-containers",
         "ms-azuretools.vscode-docker",
-        "vscjava.vscode-java-debug",
-        "richardwillis.vscode-gradle-extension-pack"
+        "vscjava.vscode-java-pack",
+        "richardwillis.vscode-gradle-extension-pack",
+        "pivotal.vscode-boot-dev-pack"
     ]
 }

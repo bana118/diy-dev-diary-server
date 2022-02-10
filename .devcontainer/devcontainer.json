@@ -3,6 +3,7 @@
     "dockerFile": "Dockerfile",
     "extensions": [
         "vscjava.vscode-java-pack",
-        "richardwillis.vscode-gradle-extension-pack"
+        "richardwillis.vscode-gradle-extension-pack",
+        "pivotal.vscode-boot-dev-pack"
     ]
 }
