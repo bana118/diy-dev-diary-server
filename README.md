@@ -1,4 +1,3 @@
-# java-container-template
+# diy-dev-diary-server
 
-Template of vscode remote development container with Java.  
-The Java version in the Dockerfile should be fixed.
+個人開発用日記アプリのサーバー

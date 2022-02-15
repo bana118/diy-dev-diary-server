@@ -1,8 +1,16 @@
 {
-    "name": "project-name",
-    "dockerFile": "Dockerfile",
+    "name": "diy-dev-diary-server",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "web",
+    "workspaceFolder": "/workspaces/diy-dev-diary-server",
     "extensions": [
-        "vscjava.vscode-java-debug",
-        "richardwillis.vscode-gradle-extension-pack"
+        "vscjava.vscode-java-pack",
+        "richardwillis.vscode-gradle-extension-pack",
+        "pivotal.vscode-boot-dev-pack",
+        "gabrielbb.vscode-lombok"
+    ],
+    "forwardPorts": [
+        5432,
+        8080
     ]
 }

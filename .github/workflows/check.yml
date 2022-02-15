@@ -11,16 +11,44 @@ on:
 jobs:
   check:
     runs-on: ubuntu-latest
+    env:
+      DATABASE_HOST: localhost
+    services:
+      db:
+        image: postgres:14.2
+        env: 
+          POSTGRES_USER: postgres
+          POSTGRES_DB: postgres
+          POSTGRES_PASSWORD: postgres
+          TZ: Asia/Tokyo
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+         - 5432:5432
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      # - name: Check git tag
-      #   uses: bana118/action-autotag@2d64822393af6f3f9db06ad3d1a51c6d756ac2f5
-      #   env:
-      #     GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-      #   with:
-      #     strategy: regex
-      #     regex_pattern: "(?<version>\\d+\\.\\d+\\.\\d+(.+)?)\\n?"
-      #     root: ".version"
-      #     tag_prefix: "v"
-      #     dry_run: true
+      - name: Check git tag
+        uses: bana118/action-autotag@2d64822393af6f3f9db06ad3d1a51c6d756ac2f5
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+        with:
+          strategy: regex
+          regex_pattern: "version = '(?<version>\\d+\\.\\d+\\.\\d+(.+)?)'\\n?"
+          root: "build.gradle"
+          tag_prefix: "v"
+          dry_run: true
+      - name: Set up JDK 17
+        uses: actions/setup-java@v2
+        with:
+          distribution: "temurin"
+          java-version: "17"
+      - name: Validate Gradle wrapper
+        uses: gradle/wrapper-validation-action@v1
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2
+      - name: Execute Gradle test
+        run: ./gradlew test
