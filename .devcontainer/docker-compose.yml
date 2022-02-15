@@ -1,0 +1,34 @@
+version: "3.8"
+services:
+
+  web:
+    build: .
+    ports:
+      - "8080:8080"
+    working_dir: /workspaces/diy-dev-diary-server
+    volumes:
+      - ..:/workspaces/diy-dev-diary-server:cached
+    depends_on:
+      - db
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    networks:
+      - backend
+    environment:
+      TZ: Asia/Tokyo
+
+  db:
+    image: postgres:14.2
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+      POSTGRES_PASSWORD: postgres
+      TZ: Asia/Tokyo
+    networks:
+      - backend
+
+# bridge はホストの任意のポートをコンテナのポートにマップできる
+networks:
+  backend:
+    driver: bridge
