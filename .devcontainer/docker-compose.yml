@@ -15,6 +15,7 @@ services:
       - backend
     environment:
       TZ: Asia/Tokyo
+      DATABASE_HOST: db
 
   db:
     image: postgres:14.2
