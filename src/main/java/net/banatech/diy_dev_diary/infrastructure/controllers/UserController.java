@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.AllArgsConstructor;
-import net.banatech.diy_dev_diary.domain.User;
+import net.banatech.diy_dev_diary.domain.user.User;
 import net.banatech.diy_dev_diary.infrastructure.controllers.forms.CreateUserDataForm;
 import net.banatech.diy_dev_diary.use_cases.CreateUserData;
 import net.banatech.diy_dev_diary.use_cases.GetAllUserData;

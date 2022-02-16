@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import lombok.AllArgsConstructor;
-import net.banatech.diy_dev_diary.domain.User;
-import net.banatech.diy_dev_diary.domain.UserRepository;
+import net.banatech.diy_dev_diary.domain.user.User;
+import net.banatech.diy_dev_diary.domain.user.UserRepository;
 
 @Service
 @AllArgsConstructor
