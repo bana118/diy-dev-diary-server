@@ -1,9 +1,6 @@
 package net.banatech.diy_dev_diary.domain.user;
 
 import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -18,11 +15,6 @@ import net.banatech.diy_dev_diary.domain.BaseEntity;
 @EqualsAndHashCode(callSuper = false)
 @NoArgsConstructor
 public class User extends BaseEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
-    private long id;
-
     @Column(name = "name")
     private String name;
 

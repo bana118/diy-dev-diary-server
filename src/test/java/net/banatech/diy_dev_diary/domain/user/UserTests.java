@@ -21,17 +21,24 @@ public class UserTests {
     }
 
     @Test
-    void testSaveUser() {
+    void testSaveUser() throws InterruptedException {
         var newUser = new User("testName", "test@example.com");
-        var savedUser = userRepository.save(newUser);
+        var savedUser = userRepository.saveAndFlush(newUser);
+
         assertThat(newUser).isEqualTo(savedUser);
+        assertThat(savedUser.getCreatedAt()).isNotNull();
+        assertThat(savedUser.getUpdatedAt()).isNotNull();
 
         assertThat(userRepository.count()).isEqualTo(1);
 
-        var modifiedUser = new User("modifiedName", "modified@example.com");
-        modifiedUser.setId(savedUser.getId());
-        var updatedUser = userRepository.save(modifiedUser);
-        assertThat(modifiedUser).isEqualTo(updatedUser);
+        savedUser.setName("modifiedName");
+        savedUser.setMailAddress("modified@example.com");
+        Thread.sleep(1000);
+        var updatedUser = userRepository.saveAndFlush(savedUser);
+
+        assertThat(updatedUser.getCreatedAt()).isNotNull();
+        assertThat(updatedUser.getUpdatedAt()).isNotNull();
+        assertThat(updatedUser.getUpdatedAt()).isAfter(updatedUser.getCreatedAt());
 
         assertThat(userRepository.count()).isEqualTo(1);
     }
@@ -59,7 +66,7 @@ public class UserTests {
     @Test
     void testDeleteUser() {
         var savedUser = userRepository.save(new User("testName", "test@example.com"));
-        userRepository.delete(savedUser);
+        userRepository.deleteById(savedUser.getId());
         assertThat(userRepository.count()).isEqualTo(0);
     }
 
