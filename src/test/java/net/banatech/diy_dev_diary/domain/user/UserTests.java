@@ -28,7 +28,8 @@ public class UserTests {
 
         assertThat(userRepository.count()).isEqualTo(1);
 
-        var modifiedUser = new User(savedUser.getId(), "modifiedName", "modified@example.com");
+        var modifiedUser = new User("modifiedName", "modified@example.com");
+        modifiedUser.setId(savedUser.getId());
         var updatedUser = userRepository.save(modifiedUser);
         assertThat(modifiedUser).isEqualTo(updatedUser);
 
