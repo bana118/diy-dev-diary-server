@@ -9,24 +9,24 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.AllArgsConstructor;
-import net.banatech.diy_dev_diary.domain.User;
+import net.banatech.diy_dev_diary.domain.user.User;
 import net.banatech.diy_dev_diary.infrastructure.controllers.forms.CreateUserDataForm;
-import net.banatech.diy_dev_diary.use_cases.CreateUserData;
-import net.banatech.diy_dev_diary.use_cases.GetAllUserData;
+import net.banatech.diy_dev_diary.use_cases.user.CreateUser;
+import net.banatech.diy_dev_diary.use_cases.user.GetAllUsers;
 
 @RestController
 @AllArgsConstructor
 public class UserController {
-    private final CreateUserData createUserData;
-    private final GetAllUserData getAllUserData;
+    private final CreateUser createUser;
+    private final GetAllUsers getAllUsers;
 
     @GetMapping(value = "/api/users", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<User> getAllUserData() {
-        return getAllUserData.getAll();
+        return getAllUsers.getAll();
     }
 
     @PostMapping(value = "/api/users", produces = MediaType.APPLICATION_JSON_VALUE)
     public User createUserData(@RequestBody CreateUserDataForm createUserDataForm) {
-        return createUserData.create(createUserDataForm.toUser());
+        return createUser.create(createUserDataForm.toUser());
     }
 }

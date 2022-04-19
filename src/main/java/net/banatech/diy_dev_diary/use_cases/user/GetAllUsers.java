@@ -1,16 +1,16 @@
-package net.banatech.diy_dev_diary.use_cases;
+package net.banatech.diy_dev_diary.use_cases.user;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
 import lombok.AllArgsConstructor;
-import net.banatech.diy_dev_diary.domain.User;
-import net.banatech.diy_dev_diary.domain.UserRepository;
+import net.banatech.diy_dev_diary.domain.user.User;
+import net.banatech.diy_dev_diary.domain.user.UserRepository;
 
 @Service
 @AllArgsConstructor
-public class GetAllUserData {
+public class GetAllUsers {
     private final UserRepository userRepository;
 
     public List<User> getAll() {

@@ -1,23 +1,24 @@
-package net.banatech.diy_dev_diary.domain;
+package net.banatech.diy_dev_diary.domain.user;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import net.banatech.diy_dev_diary.domain.BaseEntity;
 
 @Entity
 @Table(name = "users")
 @Data
+@EqualsAndHashCode(callSuper = false)
 @NoArgsConstructor
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+public class User extends BaseEntity {
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "mail_address")
     private String mailAddress;
 
     public User(String name, String mailAddress) {
