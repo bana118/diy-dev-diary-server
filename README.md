@@ -17,7 +17,6 @@ Table products {
   id int [pk, increment]
   name varchar [not null]
   description varchar
-  page varchar
   url varchar
   created_at timestamp [not null]
   updated_at timestamp [not null]
@@ -37,6 +36,7 @@ Ref: products.id > development.product_id
 Table diary {
   id int [pk, increment]
   date int [not null]
+  page_html varchar
   created_at timestamp [not null]
   updated_at timestamp [not null]
 }

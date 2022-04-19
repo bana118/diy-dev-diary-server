@@ -21,7 +21,7 @@ public class UserTests {
     }
 
     @Test
-    void testSaveUser() throws InterruptedException {
+    void testCreateUser() {
         var newUser = new User("testName", "test@example.com");
         var savedUser = userRepository.saveAndFlush(newUser);
 
@@ -33,13 +33,11 @@ public class UserTests {
 
         // この書き方だとuptetedUserのcreatedAtがnullになってしまう(原因不明)
         // var modifiedUser = new User("modifiedName", "modified@example.com");
-        // Thread.sleep(1000);
         // modifiedUser.setId(savedUser.getId());
         // var updatedUser = userRepository.saveAndFlush(modifiedUser);
 
         savedUser.setName("modifiedName");
         savedUser.setMailAddress("modified@example.com");
-        Thread.sleep(1000);
         var updatedUser = userRepository.saveAndFlush(savedUser);
 
         assertThat(updatedUser.getCreatedAt()).isNotNull();

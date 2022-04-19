@@ -1,4 +1,4 @@
-package net.banatech.diy_dev_diary.use_cases;
+package net.banatech.diy_dev_diary.use_cases.user;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ import net.banatech.diy_dev_diary.domain.user.UserRepository;
 
 @Service
 @AllArgsConstructor
-public class GetAllUserData {
+public class GetAllUsers {
     private final UserRepository userRepository;
 
     public List<User> getAll() {
