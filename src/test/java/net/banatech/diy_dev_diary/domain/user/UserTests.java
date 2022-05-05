@@ -18,7 +18,7 @@ public class UserTests {
 
     @BeforeEach
     void setup() {
-        // userRepository.deleteAll();
+        userRepository.deleteAll();
     }
 
     @Test

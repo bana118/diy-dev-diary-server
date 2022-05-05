@@ -10,7 +10,7 @@
     </resultMap>
 
     <select id="get" resultMap="User">
-        SELECT id name email created_at updated_at
+        SELECT id, name, email, created_at, updated_at
         FROM users
         WHERE id = #{id}
     </select>
@@ -38,7 +38,7 @@
         WHERE id = #{id}
     </delete>
 
-    <delete id="remove_all">
+    <delete id="removeAll">
         DELETE FROM users
     </delete>
 </mapper>
