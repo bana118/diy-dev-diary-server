@@ -19,8 +19,6 @@ services:
 
   db:
     image: mariadb:10.6.7
-    volumes:
-      - ./initdb.d:/docker-entrypoint-initdb.d
     ports:
       - "3306:3306"
     environment:

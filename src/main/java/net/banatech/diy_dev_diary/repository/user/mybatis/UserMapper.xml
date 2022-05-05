@@ -17,7 +17,7 @@
 
     <insert id="add" parameterType="net.banatech.diy_dev_diary.domain.user.User" keyProperty="id">
         INSERT INTO users(id, name, email, created_at, updated_at)
-        VALUES(#{id}, #{name}, #{email}, #{created_at}, #{updated_at})
+        VALUES(#{id}, #{name}, #{email}, #{createdAt}, #{updatedAt})
     </insert>
 
     <update id="set" parameterType="net.banatech.diy_dev_diary.domain.user.User">
@@ -36,5 +36,9 @@
     <delete id="remove" parameterType="net.banatech.diy_dev_diary.domain.user.User">
         DELETE FROM users
         WHERE id = #{id}
+    </delete>
+
+    <delete id="remove_all">
+        DELETE FROM users
     </delete>
 </mapper>

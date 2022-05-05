@@ -12,4 +12,6 @@ public interface UserMapper {
     int set(User user);
 
     int remove(User user);
+
+    int removeAll();
 }

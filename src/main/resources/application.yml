@@ -7,6 +7,7 @@ spring:
     sql:
         init:
             mode: always
+            schema-locations: classpath:db/initdb/schema.sql
     jpa:
         hibernate:
             ddl-auto: update
@@ -16,3 +17,5 @@ spring:
     test:
         database:
             replace: none
+mybatis:
+    mapper-locations: classpath:net/banatech/diy_dev_diary/repository/user/mybatis/*.xml

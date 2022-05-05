@@ -54,4 +54,8 @@ public class UserRepositoryImpl implements UserRepository {
         }
     }
 
+    @Override
+    public void deleteAll() {
+        this.sqlSessionTemplate.getMapper(UserMapper.class).removeAll();
+    }
 }
