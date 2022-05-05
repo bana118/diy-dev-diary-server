@@ -9,6 +9,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
+import net.banatech.diy_dev_diary.repository.user.UserRepository;
+
 @DataJpaTest
 public class UserTests {
 
