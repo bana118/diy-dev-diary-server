@@ -18,11 +18,11 @@ public class User extends BaseEntity {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "mail_address")
-    private String mailAddress;
+    @Column(name = "email")
+    private String email;
 
-    public User(String name, String mailAddress) {
+    public User(String name, String email) {
         this.name = name;
-        this.mailAddress = mailAddress;
+        this.email = email;
     }
 }

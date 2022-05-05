@@ -6,9 +6,9 @@ import net.banatech.diy_dev_diary.domain.user.User;
 @Data
 public class CreateUserDataForm {
     private String name;
-    private String mailAddress;
+    private String email;
 
     public User toUser() {
-        return new User(name, mailAddress);
+        return new User(name, email);
     }
 }

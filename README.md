@@ -8,7 +8,7 @@
 Table users {
   id int [pk, increment]
   name varchar [not null]
-  mail_address varchar [not null]
+  email varchar [not null]
   created_at timestamp [not null]
   updated_at timestamp [not null]
 }

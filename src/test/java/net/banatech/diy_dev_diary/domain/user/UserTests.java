@@ -39,7 +39,7 @@ public class UserTests {
         // var updatedUser = userRepository.saveAndFlush(modifiedUser);
 
         savedUser.setName("modifiedName");
-        savedUser.setMailAddress("modified@example.com");
+        savedUser.setemail("modified@example.com");
         var updatedUser = userRepository.saveAndFlush(savedUser);
 
         assertThat(updatedUser.getCreatedAt()).isNotNull();
@@ -62,11 +62,11 @@ public class UserTests {
                 new User("testName2", "test2@example.com"), new User("testName3", "test3@example.com"));
 
         assertThat(allUser.get(0).getName()).isEqualTo(expectedAllUser.get(0).getName());
-        assertThat(allUser.get(0).getMailAddress()).isEqualTo(expectedAllUser.get(0).getMailAddress());
+        assertThat(allUser.get(0).getemail()).isEqualTo(expectedAllUser.get(0).getemail());
         assertThat(allUser.get(1).getName()).isEqualTo(expectedAllUser.get(1).getName());
-        assertThat(allUser.get(1).getMailAddress()).isEqualTo(expectedAllUser.get(1).getMailAddress());
+        assertThat(allUser.get(1).getemail()).isEqualTo(expectedAllUser.get(1).getemail());
         assertThat(allUser.get(2).getName()).isEqualTo(expectedAllUser.get(2).getName());
-        assertThat(allUser.get(2).getMailAddress()).isEqualTo(expectedAllUser.get(2).getMailAddress());
+        assertThat(allUser.get(2).getemail()).isEqualTo(expectedAllUser.get(2).getemail());
     }
 
     @Test
