@@ -1,11 +1,13 @@
 package net.banatech.diy_dev_diary.repository.user;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
-
 import net.banatech.diy_dev_diary.domain.user.User;
 
-@Repository
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface UserRepository {
+    User findOne(String userId);
 
+    void insert(User user);
+
+    void update(User user);
+
+    void delete(User user);
 }
