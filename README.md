@@ -9,8 +9,8 @@ Table users {
   id int [pk, increment]
   name varchar [not null]
   email varchar [not null]
-  created_at timestamp [not null]
-  updated_at timestamp [not null]
+  created_at datetime [not null]
+  updated_at datetime [not null]
 }
 
 Table products {
@@ -18,16 +18,16 @@ Table products {
   name varchar [not null]
   description varchar
   url varchar
-  created_at timestamp [not null]
-  updated_at timestamp [not null]
+  created_at datetime [not null]
+  updated_at datetime [not null]
 }
 
 Table development {
   id int [pk, increment]
   user_id int [not null]
   product_id int [not null]
-  created_at timestamp [not null]
-  updated_at timestamp [not null]
+  created_at datetime [not null]
+  updated_at datetime [not null]
 }
 
 Ref: users.id > development.user_id
@@ -37,16 +37,16 @@ Table diary {
   id int [pk, increment]
   date int [not null]
   page_html varchar
-  created_at timestamp [not null]
-  updated_at timestamp [not null]
+  created_at datetime [not null]
+  updated_at datetime [not null]
 }
 
 Table recording {
   id int [pk, increment]
   product_id int [not null]
   diary_id int [not null]
-  created_at timestamp [not null]
-  updated_at timestamp [not null]
+  created_at datetime [not null]
+  updated_at datetime [not null]
 }
 
 Ref: products.id > recording.product_id
