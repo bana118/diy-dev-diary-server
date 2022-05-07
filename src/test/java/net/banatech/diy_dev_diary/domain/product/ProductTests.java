@@ -1,15 +1,16 @@
 package net.banatech.diy_dev_diary.domain.product;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import java.util.Date;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.context.SpringBootTest;
 
+import net.banatech.diy_dev_diary.DiyDevDiaryApplication;
 import net.banatech.diy_dev_diary.repository.product.ProductRepository;
 
-@DataJpaTest
+@SpringBootTest(classes = DiyDevDiaryApplication.class)
 public class ProductTests {
 
     @Autowired
@@ -21,13 +22,9 @@ public class ProductTests {
     }
 
     @Test
-    void testCreateProduct() throws InterruptedException {
-        var newProduct = new Product("testName", "testDescription", "testUrl");
-        var savedProduct = productRepository.save(newProduct);
-
-        assertThat(newProduct).isEqualTo(savedProduct);
-        assertThat(savedProduct.getCreatedAt()).isNotNull();
-        assertThat(savedProduct.getUpdatedAt()).isNotNull();
+    void testInsert() throws Exception {
+        Date now = new Date();
+        Product product = new Product("01", "testName", "testDescription", "https://example.com/test", now, now);
+        productRepository.insert(product);
     }
-
 }
