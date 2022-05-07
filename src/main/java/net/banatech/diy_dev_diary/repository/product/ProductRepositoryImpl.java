@@ -5,7 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
-import net.banatech.diy_dev_diary.domain.product.Product;
+import net.banatech.diy_dev_diary.domain.Product;
 import net.banatech.diy_dev_diary.repository.ResourceNotFoundException;
 import net.banatech.diy_dev_diary.repository.product.mybatis.ProductMapper;;
 

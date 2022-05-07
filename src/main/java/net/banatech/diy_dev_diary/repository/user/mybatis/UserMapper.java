@@ -2,7 +2,7 @@ package net.banatech.diy_dev_diary.repository.user.mybatis;
 
 import org.apache.ibatis.annotations.Param;
 
-import net.banatech.diy_dev_diary.domain.user.User;
+import net.banatech.diy_dev_diary.domain.User;
 
 public interface UserMapper {
     User get(@Param("id") String id);

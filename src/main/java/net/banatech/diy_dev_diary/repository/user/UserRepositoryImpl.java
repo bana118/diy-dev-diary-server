@@ -5,7 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
-import net.banatech.diy_dev_diary.domain.user.User;
+import net.banatech.diy_dev_diary.domain.User;
 import net.banatech.diy_dev_diary.repository.ResourceNotFoundException;
 import net.banatech.diy_dev_diary.repository.user.mybatis.UserMapper;
 

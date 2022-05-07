@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import net.banatech.diy_dev_diary.DiyDevDiaryApplication;
-import net.banatech.diy_dev_diary.domain.user.User;
+import net.banatech.diy_dev_diary.domain.User;
 
 @SpringBootTest(classes = DiyDevDiaryApplication.class)
 public class UserTests {

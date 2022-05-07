@@ -1,4 +1,4 @@
-package net.banatech.diy_dev_diary.domain.product;
+package net.banatech.diy_dev_diary.domain;
 
 import java.util.Date;
 
