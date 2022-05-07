@@ -18,4 +18,6 @@ spring:
         database:
             replace: none
 mybatis:
-    mapper-locations: classpath:net/banatech/diy_dev_diary/repository/user/mybatis/*.xml
+    mapper-locations: 
+        - classpath:net/banatech/diy_dev_diary/repository/user/mybatis/*.xml
+        - classpath:net/banatech/diy_dev_diary/repository/product/mybatis/*.xml
