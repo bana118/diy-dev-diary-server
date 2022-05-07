@@ -1,4 +1,4 @@
-package net.banatech.diy_dev_diary.domain.product;
+package net.banatech.diy_dev_diary.repository.user;
 
 import java.util.Date;
 
@@ -8,23 +8,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import net.banatech.diy_dev_diary.DiyDevDiaryApplication;
-import net.banatech.diy_dev_diary.repository.product.ProductRepository;
+import net.banatech.diy_dev_diary.domain.user.User;
 
 @SpringBootTest(classes = DiyDevDiaryApplication.class)
-public class ProductTests {
+public class UserTests {
 
     @Autowired
-    private ProductRepository productRepository;
+    private UserRepository userRepository;
 
     @BeforeEach
     void setup() {
-        productRepository.deleteAll();
+        userRepository.deleteAll();
     }
 
     @Test
     void testInsert() throws Exception {
         Date now = new Date();
-        Product product = new Product("01", "testName", "testDescription", "https://example.com/test", now, now);
-        productRepository.insert(product);
+        User user = new User("01", "testName", "test@example.com", now, now);
+        userRepository.insert(user);
     }
 }
