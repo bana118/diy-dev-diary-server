@@ -5,6 +5,7 @@
         "vscjava.vscode-java-pack",
         "richardwillis.vscode-gradle-extension-pack",
         "pivotal.vscode-boot-dev-pack",
-        "gabrielbb.vscode-lombok"
+        "gabrielbb.vscode-lombok",
+        "redhat.vscode-xml"
     ]
 }
