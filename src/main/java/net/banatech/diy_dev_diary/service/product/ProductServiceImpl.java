@@ -37,7 +37,8 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     @Transactional(rollbackFor = Throwable.class)
-    public void delete(Product product) {
+    public void delete(String productId) {
+        Product product = this.productRepository.lock(productId);
         this.productRepository.delete(product);
     }
 

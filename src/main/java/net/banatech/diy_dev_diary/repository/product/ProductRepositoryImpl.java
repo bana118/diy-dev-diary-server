@@ -32,6 +32,18 @@ public class ProductRepositoryImpl implements ProductRepository {
     }
 
     @Override
+    public Product lock(String productId) {
+        Product product = this.sqlSessionTemplate.getMapper(ProductMapper.class).lock(productId);
+
+        if (product == null) {
+            logger.info("Product not found. id={}", productId);
+            throw new ResourceNotFoundException("Product not found");
+        }
+
+        return product;
+    }
+
+    @Override
     public void insert(Product product) {
         this.sqlSessionTemplate.getMapper(ProductMapper.class).add(product);
     }

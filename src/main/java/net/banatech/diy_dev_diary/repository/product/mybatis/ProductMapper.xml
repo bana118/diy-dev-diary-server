@@ -16,6 +16,13 @@
         WHERE id = #{id}
     </select>
 
+    <select id="lock" resultMap="Product">
+        SELECT id, name, description, url, created_at, updated_at
+        FROM products
+        WHERE id = #{id}
+        FOR UPDATE
+    </select>
+
     <insert id="add" parameterType="net.banatech.diy_dev_diary.domain.product.Product" keyProperty="id">
         INSERT INTO products(id, name, description, url, created_at, updated_at)
         VALUES(#{id}, #{name}, #{description}, #{url}, #{createdAt}, #{updatedAt})
