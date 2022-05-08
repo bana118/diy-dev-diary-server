@@ -46,8 +46,7 @@ public class UserRestController {
 
     @DeleteMapping(path = "/{userId}", produces = "application/json")
     public void remove(@PathVariable String userId) {
-        User user = this.userService.findOne(userId);
-        this.userService.delete(user);
+        this.userService.delete(userId);
     }
 
 }

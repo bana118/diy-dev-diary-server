@@ -7,6 +7,8 @@ import net.banatech.diy_dev_diary.domain.User;
 public interface UserMapper {
     User get(@Param("id") String id);
 
+    User lock(@Param("id") String id);
+
     int add(User user);
 
     int set(User user);

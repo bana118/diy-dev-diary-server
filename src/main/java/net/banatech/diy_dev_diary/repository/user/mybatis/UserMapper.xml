@@ -15,6 +15,13 @@
         WHERE id = #{id}
     </select>
 
+    <select id="lock" resultMap="User">
+        SELECT id, name, email, created_at, updated_at
+        FROM users
+        WHERE id = #{id}
+        FOR UPDATE
+    </select>
+
     <insert id="add" parameterType="net.banatech.diy_dev_diary.domain.user.User" keyProperty="id">
         INSERT INTO users(id, name, email, created_at, updated_at)
         VALUES(#{id}, #{name}, #{email}, #{createdAt}, #{updatedAt})

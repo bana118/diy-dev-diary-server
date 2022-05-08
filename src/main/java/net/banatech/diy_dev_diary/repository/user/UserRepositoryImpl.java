@@ -32,6 +32,18 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     @Override
+    public User lock(String userId) {
+        User user = this.sqlSessionTemplate.getMapper(UserMapper.class).lock(userId);
+
+        if (user == null) {
+            logger.info("User not found. id={}", userId);
+            throw new ResourceNotFoundException("User not found");
+        }
+
+        return user;
+    }
+
+    @Override
     public void insert(User user) {
         this.sqlSessionTemplate.getMapper(UserMapper.class).add(user);
     }

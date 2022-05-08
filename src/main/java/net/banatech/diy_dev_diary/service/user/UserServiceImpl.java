@@ -37,7 +37,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional(rollbackFor = Throwable.class)
-    public void delete(User user) {
+    public void delete(String userId) {
+        User user = this.userRepository.lock(userId);
         this.userRepository.delete(user);
     }
 
