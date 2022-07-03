@@ -3,6 +3,7 @@ package net.banatech.diy_dev_diary.repository.product;
 import java.util.Date;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -10,6 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import net.banatech.diy_dev_diary.DiyDevDiaryApplication;
 import net.banatech.diy_dev_diary.domain.Product;
 
+@Disabled
 @SpringBootTest(classes = DiyDevDiaryApplication.class)
 public class ProductTests {
 
